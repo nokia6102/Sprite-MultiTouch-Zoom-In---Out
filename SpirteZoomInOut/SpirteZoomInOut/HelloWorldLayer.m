@@ -9,6 +9,7 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "CCScrollLayer.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -37,23 +38,26 @@
 		
     self.isTouchEnabled=YES;
     [glView setMultipleTouchEnabled:YES]; 
-    // create and initialize a Label
-//		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-    demoSprite =[CCSprite spriteWithFile:@"2.jpg" ];
+    
+ demoSprite =[CCSprite spriteWithFile:@"2.jpg" ];
+    chicken =[CCSprite spriteWithFile:@"image1.png" ];
+    CCLabelTTF *myLabel=[CCLabelTTF labelWithString:@"chicken tester" fontName:@"Marker Felt" fontSize:40] ;  
+       
+//    [self addChild: myLabel] ;
     // ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 	  
-//    demoSprite.scaleX=(size.width/demoSprite.contentSize.width);
-   		demoSprite.scale=(size.height/demoSprite.contentSize.height);
-//		
-		// position the label on the center of the screen
-	 
-    demoSprite.position =  ccp( size.width /2 , size.height/2 );
 
+// 		demoSprite.scale=(size.height/demoSprite.contentSize.height);
+    demoSprite.position =  ccp( size.width /2 , size.height/2 );
+    chicken.position =  ccp( size.width /2 , size.height/2 );
 		// add the label as a child to this Layer
-		[self addChild: demoSprite];
-	}
+    myLabel.position=CGPointMake(chicken.position.x, chicken.position.x-chicken.contentSize.height/2);
+
+ 		[self addChild: demoSprite z:1 tag:1];
+    [self addChild: chicken z:2 tag:2];
+    [self addChild: myLabel z:3 tag:3];
+  }
 	return self;
 }
 
@@ -130,6 +134,48 @@
 	[super onExit];
 }
 #endif
+
+- (void)onPageMoved:(CCScrollLayer *)scrollLayer
+{
+	[self setPageIndex:scrollLayer.currentScreen - 1];
+}
+
+
+- (void)initScrollLayer
+{
+	// get screen size
+	CGSize screenSize = [CCDirector sharedDirector].winSize;
+	
+	/////////////////////////////////////////////////
+	// PAGE 1
+	////////////////////////////////////////////////
+	// create a blank layer for page 1
+	CCLayer *pageOne = [[CCLayer alloc] init];
+	 pageOne.position = ccp(screenSize.width/2, screenSize.height/2);
+  [pageOne addChild:demoSprite];
+	
+	
+	// now create the scroller and pass-in the pages (set widthOffset to 0 for fullscreen pages)
+ 	CCScrollLayer *scroller = [[CCScrollLayer alloc] initWithLayers:[NSMutableArray arrayWithObjects: pageOne,pageOne,nil] widthOffset: 0];
+	
+	// finally add the scroller to your scene
+	[self addChild:scroller];
+	
+	// page moved delegate
+	{
+    
+		NSMethodSignature* signature = 
+		[[self class] instanceMethodSignatureForSelector:@selector(onPageMoved:)];
+		
+		NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
+		
+		[invocation setTarget:self];
+		[invocation setSelector:@selector(onPageMoved:)];
+		
+		scroller.onPageMoved = invocation;
+	}
+}
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

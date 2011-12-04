@@ -122,7 +122,9 @@
 		DB2DE16C148B28160088C99C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE16B148B28160088C99C /* AppDelegate.m */; };
 		DB2DE16F148B28160088C99C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE16E148B28160088C99C /* RootViewController.m */; };
 		DB2DE172148B28160088C99C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE171148B28160088C99C /* HelloWorldLayer.m */; };
+		DBA6F217148B9A6B002E951E /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA6F216148B9A6B002E951E /* image1.png */; };
 		DBD5D8D5148B508E006CDF15 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD5D8D4148B508E006CDF15 /* 2.jpg */; };
+		DBEDBC61148B574700DBB1BF /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEDBC60148B574700DBB1BF /* CCScrollLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -361,7 +363,10 @@
 		DB2DE170148B28160088C99C /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		DB2DE171148B28160088C99C /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DB2DE173148B28160088C99C /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		DBA6F216148B9A6B002E951E /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 		DBD5D8D4148B508E006CDF15 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		DBEDBC5F148B574700DBB1BF /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		DBEDBC60148B574700DBB1BF /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,7 +391,10 @@
 		DB2DDFF9148B28140088C99C = {
 			isa = PBXGroup;
 			children = (
+				DBEDBC5F148B574700DBB1BF /* CCScrollLayer.h */,
+				DBEDBC60148B574700DBB1BF /* CCScrollLayer.m */,
 				DBD5D8D4148B508E006CDF15 /* 2.jpg */,
+				DBA6F216148B9A6B002E951E /* image1.png */,
 				DB2DE018148B28140088C99C /* SpirteZoomInOut */,
 				DB2DE007148B28140088C99C /* Frameworks */,
 				DB2DE005148B28140088C99C /* Products */,
@@ -821,6 +829,7 @@
 				DB2DE029148B28140088C99C /* Icon@2x.png in Resources */,
 				DB2DE02C148B28140088C99C /* iTunesArtwork in Resources */,
 				DBD5D8D5148B508E006CDF15 /* 2.jpg in Resources */,
+				DBA6F217148B9A6B002E951E /* image1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,6 +938,7 @@
 				DB2DE16C148B28160088C99C /* AppDelegate.m in Sources */,
 				DB2DE16F148B28160088C99C /* RootViewController.m in Sources */,
 				DB2DE172148B28160088C99C /* HelloWorldLayer.m in Sources */,
+				DBEDBC61148B574700DBB1BF /* CCScrollLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
