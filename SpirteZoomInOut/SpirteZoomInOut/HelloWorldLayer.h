@@ -13,9 +13,14 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+  float oldDist;
+
+  CCSprite *demoSprite;
+  UIView *glView;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+//@property CCSprie;
 
 @end

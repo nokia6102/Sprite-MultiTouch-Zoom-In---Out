@@ -15,7 +15,7 @@
 //		UIViewController,
 //		CCDirector
 //
-#define kGameAutorotationNone 2
+#define kGameAutorotationNone 0
 #define kGameAutorotationCCDirector 1
 #define kGameAutorotationUIViewController 2
 

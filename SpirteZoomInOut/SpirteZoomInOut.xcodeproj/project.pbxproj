@@ -122,7 +122,7 @@
 		DB2DE16C148B28160088C99C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE16B148B28160088C99C /* AppDelegate.m */; };
 		DB2DE16F148B28160088C99C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE16E148B28160088C99C /* RootViewController.m */; };
 		DB2DE172148B28160088C99C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DE171148B28160088C99C /* HelloWorldLayer.m */; };
-		DB2DE17A148B28F50088C99C /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2DE179148B28F50088C99C /* image3.png */; };
+		DBD5D8D5148B508E006CDF15 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD5D8D4148B508E006CDF15 /* 2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -361,7 +361,7 @@
 		DB2DE170148B28160088C99C /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		DB2DE171148B28160088C99C /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DB2DE173148B28160088C99C /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		DB2DE179148B28F50088C99C /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		DBD5D8D4148B508E006CDF15 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,7 +386,7 @@
 		DB2DDFF9148B28140088C99C = {
 			isa = PBXGroup;
 			children = (
-				DB2DE179148B28F50088C99C /* image3.png */,
+				DBD5D8D4148B508E006CDF15 /* 2.jpg */,
 				DB2DE018148B28140088C99C /* SpirteZoomInOut */,
 				DB2DE007148B28140088C99C /* Frameworks */,
 				DB2DE005148B28140088C99C /* Products */,
@@ -820,7 +820,7 @@
 				DB2DE027148B28140088C99C /* Icon.png in Resources */,
 				DB2DE029148B28140088C99C /* Icon@2x.png in Resources */,
 				DB2DE02C148B28140088C99C /* iTunesArtwork in Resources */,
-				DB2DE17A148B28F50088C99C /* image3.png in Resources */,
+				DBD5D8D5148B508E006CDF15 /* 2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,6 +1022,7 @@
 				DB2DE178148B28160088C99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
