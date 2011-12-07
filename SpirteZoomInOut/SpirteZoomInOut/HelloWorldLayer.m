@@ -35,15 +35,16 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
-		
+    //起動多點觸控方式
     self.isTouchEnabled=YES;
     [glView setMultipleTouchEnabled:YES]; 
     
+    //背景
  demoSprite =[CCSprite spriteWithFile:@"2.jpg" ];
+    //小雞
     chicken =[CCSprite spriteWithFile:@"image1.png" ];
-    CCLabelTTF *myLabel=[CCLabelTTF labelWithString:@"chicken tester" fontName:@"Marker Felt" fontSize:40] ;  
-       
-//    [self addChild: myLabel] ;
+    //字
+    CCLabelTTF *myLabel=[CCLabelTTF labelWithString:@"drag or two pings zoom in/out" fontName:@"Marker Felt" fontSize:40] ;  
     // ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 	  
@@ -52,8 +53,9 @@
     demoSprite.position =  ccp( size.width /2 , size.height/2 );
     chicken.position =  ccp( size.width /2 , size.height/2 );
 		// add the label as a child to this Layer
+   //設定label位置
     myLabel.position=CGPointMake(chicken.position.x, chicken.position.x-chicken.contentSize.height/2);
-
+    //加入背景、雞、立字 到1 ,2, 3 層，設不同的tag 辨識 
  		[self addChild: demoSprite z:1 tag:1];
     [self addChild: chicken z:2 tag:2];
     [self addChild: myLabel z:3 tag:3];
@@ -64,7 +66,7 @@
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
   NSSet *set=[event allTouches];
-   
+  //當2點觸控時
   if (set.count ==2){
     UITouch *one =[[set allObjects] objectAtIndex:0] ;
     UITouch *two =[[set allObjects] objectAtIndex:1] ;
@@ -75,7 +77,7 @@
     float dist = ccpDistance(ptOne, ptTwo);
     oldDist=dist;
   }
-  
+  //當1點觸控時
   if (set.count == 1){    
     UITouch *one = [touches anyObject];
     CGPoint ptOne=[one locationInView:[one view]];
@@ -87,6 +89,7 @@
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  //觸控事件
   NSSet *set=[event allTouches];
   if (set.count ==2){
     UITouch *one =[[set allObjects] objectAtIndex:0] ;
@@ -96,7 +99,8 @@
     ptOne =[[CCDirector sharedDirector] convertToGL:ptOne];
     ptTwo =[[CCDirector sharedDirector] convertToGL:ptTwo];
     float dist = ccpDistance(ptOne, ptTwo);
-    
+    //雞是不規則形狀還要作處理，現在先以背景圖來作demo
+    //縮、放
     if (oldDist>=dist) {
        CCLOG(@">=");
       [demoSprite setScale:demoSprite.scale - fabsf(oldDist-dist) /100];
@@ -111,7 +115,7 @@
     CCLOG(@"olddist=%f , disd=%f move disk=%f",oldDist,dist,dist);
     oldDist=dist;
   }
-
+  //drag動作，這邊還不太順要處理吧! 
   if (set.count == 1){
     UITouch *one = [touches anyObject];
     CGPoint ptOne=[one locationInView:[one view]];
@@ -120,7 +124,7 @@
   }
   
 }
-
+//cocos 2d新的設定多點方式，還不太相容？
 #if 0
 - (void) onEnter
 {
@@ -135,6 +139,7 @@
 }
 #endif
 
+//CCScrollLayer 整合？
 - (void)onPageMoved:(CCScrollLayer *)scrollLayer
 {
 	[self setPageIndex:scrollLayer.currentScreen - 1];
